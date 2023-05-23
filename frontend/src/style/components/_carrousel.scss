@@ -1,0 +1,40 @@
+.carrouselContainer {
+  border-radius: 0.5rem;
+  border: solid 1px;
+  border-color: $color-2;
+  margin: auto;
+  margin-bottom: 2rem;
+  @media screen and (min-width: 1200px) {
+    height: 70vh;
+    width: 95vw;
+    margin: auto;
+    margin-top: 1rem;
+  }
+
+  .legend {
+    background-color: rgba($color: $black, $alpha: 0.7) !important;
+    height: 15% !important;
+    width: 100% !important;
+    font-size: 1rem !important;
+    text-align: left !important;
+    border-radius: 0 !important;
+    margin-left: -50% !important;
+    font-family: $font-1 !important;
+    opacity: 0.9 !important;
+    padding-left: 15px !important;
+
+    @media screen and (min-width: 1200px) {
+      font-size: 4rem !important;
+      height: 15% !important;
+      text-align: center !important;
+      padding: 10px !important;
+    }
+  }
+
+  .carrouselImg {
+    border-radius: 1rem;
+    @media screen and (min-width: 1200px) {
+      height: 70vh;
+    }
+  }
+}

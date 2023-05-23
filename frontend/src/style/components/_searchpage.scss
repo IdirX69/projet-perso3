@@ -1,0 +1,38 @@
+.pageContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 7.5vh;
+  input,
+  select {
+    display: flex;
+    align-self: center;
+    width: 300px;
+    height: 35px;
+    font-display: center;
+    text-align: center;
+    border-radius: 10px;
+    outline: none;
+    :focus {
+      border: 1px solid $color-1;
+    }
+  }
+}
+
+.allVids {
+  @include flex-col-center;
+}
+
+.searchpage-container {
+  margin-top: 2rem;
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.little-title {
+  margin-top: 12%;
+}

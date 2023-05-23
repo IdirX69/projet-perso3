@@ -1,0 +1,41 @@
+.favorite-page-container {
+  height: 100vh;
+  width: 100vw;
+  h2 {
+    margin: auto;
+  }
+  .favorite-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    .favorite-box {
+      width: 50%;
+      height: 30%;
+      display: flex;
+      flex-direction: column;
+      .favContainer {
+        width: 100%;
+        height: 20%;
+        margin: 0;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        background: none;
+        border: none;
+        .favorite {
+          background-image: url(../../src/asset/image/fav.png);
+        }
+        .no-favorite {
+          background-image: url(../../src/asset/image/unfav.png);
+        }
+        .no-favorite,
+        .favorite {
+          height: 45px;
+          width: 45px;
+          margin: 0;
+          background-size: cover;
+        }
+      }
+    }
+  }
+}
