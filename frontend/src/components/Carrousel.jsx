@@ -24,13 +24,12 @@ function Carrousel() {
     <div>
       <div className="carrouselContainer">
         <Carousel
+          stopOnHover
           autoPlay
           infiniteLoop
-          showThumbs=""
-          showStatus=""
           dynamicHeight="false"
           interval="5000"
-          transitionTime="500"
+          transitionTime="200"
         >
           {videosPromoted.map((video) => (
             <Link

@@ -11,37 +11,35 @@ import VideoPlay from "../components/VideoPlay";
 function VideoPlayer() {
   const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
-  const { selectedId } = useContext(CurrentVideosContext);
-
-  const backUrl = import.meta.env.VITE_BACKEND_URL;
+  const { selectedId, videoDate } = useContext(CurrentVideosContext);
 
   const [videoPlayed, setVideoPlayed] = useState([]);
   const [currentVideoComments, setCurrentVideoComments] = useState([]);
 
   useEffect(() => {
     axios
-      .get(`${backUrl}/api/videos/infos/${selectedId}`)
+      .get(`${BACKEND_URL}/api/videos/infos/${selectedId}`)
       .then((response) => {
         setVideoPlayed(response.data);
       })
       .catch((err) => console.error(err));
-  }, []);
+  }, [selectedId]);
 
   useEffect(() => {
     fetch(`${BACKEND_URL}/api/videos/infos/${selectedId}`)
       .then((res) => res.json())
       .then((videos) => setCurrentVideoComments(videos.comment));
-  }, []);
+  }, [selectedId]);
   return (
     <div className="player-page">
       <Header />
-      <Navbar />
-      <VideoPlay video={videoPlayed} />
+      <VideoPlay video={videoPlayed} videoDate={videoDate} />
       <Slider />
       <Comment
         currentVideoComments={currentVideoComments}
         setCurrentVideoComments={setCurrentVideoComments}
       />
+      <Navbar />
     </div>
   );
 }

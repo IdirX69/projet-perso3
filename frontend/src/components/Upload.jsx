@@ -223,7 +223,7 @@ function Upload() {
               className="form-controll "
               required
               minLength={3}
-              maxLength={100}
+              maxLength={500}
             />
           </div>
           <div className="form-group">

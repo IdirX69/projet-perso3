@@ -30,40 +30,27 @@ function Register() {
   const navigate = useNavigate();
   const handleForm = (e) => {
     e.preventDefault();
+
     const result = schema.validate(userRegistered);
-    if (result.error) {
-      setErrorMessage(
-        "Votre mot de passe doit contenir au moin 8 Caractère dont une majuscule et un chiffre"
-      );
-      return;
-    }
-    if (confirmPassword === userRegistered.password) {
-      const myHeaders = new Headers();
-      myHeaders.append("Content-Type", "application/json");
 
-      const body = JSON.stringify(userRegistered);
-
+    if (confirmPassword === userRegistered.password && !result.error) {
       const requestOptions = {
         method: "POST",
-        headers: myHeaders,
-        body,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(userRegistered),
       };
 
       fetch(`${BACKEND_URL}/api/register`, requestOptions)
-        .then(async (response) => {
-          if (response.status === 422) {
-            const data = await response.json();
-            console.warn(data);
+        .then((response) => {
+          if (response.status === 201) {
+            navigate("/login");
           }
-          navigate("/login");
         })
         .catch((error) => {
-          if (error.response.status === 422) {
-            console.warn(error.response.status);
-          }
+          console.warn(error);
         });
     } else {
-      setErrorMessage("Les champs mot de passe ne sont pas identique");
+      setErrorMessage("Une erreur c'est produite");
     }
   };
 

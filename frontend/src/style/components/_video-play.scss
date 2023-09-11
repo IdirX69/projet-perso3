@@ -1,6 +1,12 @@
 .video-play-container {
+  @media screen and (min-width: 1200px) {
+    width: 80%;
+    margin: auto;
+    margin-top: 2rem;
+  }
+
   .video-play {
-    height: 35vh;
+    height: 30vh;
     width: 98%;
     background-color: $white;
     margin: auto;
@@ -24,14 +30,26 @@
     font-size: 0.8rem;
     line-height: 1rem;
     word-spacing: 1px;
+    @media screen and (min-width: 1200px) {
+      width: 70%;
+      font-size: 1.1rem;
+      line-height: 1.7rem;
+      margin: 1rem;
+    }
   }
   .date-video {
     color: $color-1;
+    @media screen and (min-width: 1200px) {
+      margin: 1rem;
+    }
   }
   .interaction {
     display: flex;
     justify-content: space-between;
     margin: 2.5%;
+    @media screen and (min-width: 1200px) {
+      margin: 1rem;
+    }
     .like-share {
       display: flex;
       button {

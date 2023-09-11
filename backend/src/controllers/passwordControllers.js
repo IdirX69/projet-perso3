@@ -20,6 +20,7 @@ const verifyEmail = (req, res, next) => {
       res.status(500).send("Error retrieving data from database");
     });
 };
+
 // I generate my token through uuidv4
 // I save the token in my BDD and associate it with the user
 // I transmit the token to the next middleware

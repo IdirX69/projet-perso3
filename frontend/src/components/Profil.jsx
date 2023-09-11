@@ -44,28 +44,19 @@ function Profil() {
     lastname: user.lastname,
     email: user.email,
   });
-  const setter = () => {
-    setNewUserInfos({
-      firstname: user.firstname,
-      lastname: user.lastname,
-      email: user.email,
-    });
-  };
-
-  const body = JSON.stringify(newUserInfos);
 
   const myHeaders = new Headers({
     Authorization: `Bearer ${token}`,
+    "Content-Type": "application/json",
   });
-  myHeaders.append("Content-Type", "application/json");
 
   const PUTrequestOptions = {
     method: "PUT",
     headers: myHeaders,
-    body,
+    body: JSON.stringify(newUserInfos),
   };
 
-  const changeUserStatus = (id) => {
+  const changeUsersInfo = (id) => {
     fetch(`${BACKEND_URL}/api/users/${id}`, PUTrequestOptions);
     setUser({
       ...user,
@@ -110,7 +101,6 @@ function Profil() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (avatarRef.current.files[0]) {
-      // recupération des articles.
       const myHeader = new Headers();
       myHeader.append("Authorization", `Bearer ${token}`);
 
@@ -169,8 +159,7 @@ function Profil() {
             type="button"
             onClick={() => {
               setModifyInfos(false);
-              setter();
-              changeUserStatus(user.id);
+              changeUsersInfo(user.id);
               saveInfosChangeToast();
             }}
           >
@@ -228,7 +217,6 @@ function Profil() {
             <input
               type="text"
               value={newUserInfos.email}
-              pattern="(/^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+.$/gm"
               required
               title='Veuillez entrer une adresse mail valide. Exemple: "exemple@mail.fr'
               minLength={6}
