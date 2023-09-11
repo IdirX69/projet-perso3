@@ -214,6 +214,16 @@ const promote = (req, res) => {
     });
 };
 
+const sendImgVideo = (req, res) => {
+  const { fileName } = req.params;
+
+  res.download(imgVideoDirectory + fileName, fileName, (err) => {
+    if (err) {
+      console.error("error download: ", err);
+    }
+  });
+};
+
 const editPromote = (req, res) => {
   const videos = req.body;
   videos.id = parseInt(req.params.id, 10);
@@ -228,16 +238,6 @@ const editPromote = (req, res) => {
       console.error(error);
       res.sendStatus(500);
     });
-};
-
-const sendImgVideo = (req, res) => {
-  const { fileName } = req.params;
-
-  res.download(imgVideoDirectory + fileName, fileName, (err) => {
-    if (err) {
-      console.error("error download: ", err);
-    }
-  });
 };
 
 module.exports = {

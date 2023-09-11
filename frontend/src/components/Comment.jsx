@@ -110,7 +110,11 @@ function Comment({ currentVideoComments, setCurrentVideoComments }) {
           <div className="comment-author" key={videosComments.id}>
             <div className="comment-img">
               <img
-                src={`${BACKEND_URL}/api/avatars/${videosComments.avatar}`}
+                src={
+                  videosComments.avatar
+                    ? `${BACKEND_URL}/api/avatars/${videosComments.avatar}`
+                    : "../../src/asset/image/defaultAvatar.jpeg"
+                }
                 alt={`${videosComments.firstname}'s avatar`}
               />
               <h4>{videosComments.firstname}</h4>
