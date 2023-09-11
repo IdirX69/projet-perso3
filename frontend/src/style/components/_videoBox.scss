@@ -7,14 +7,17 @@
   margin: 5vw;
   z-index: 0;
   @media screen and (min-width: 1200px) {
-    width: 25vw;
-    height: 25vh;
-    margin: 5.5rem;
+    width: 20vw;
+    height: 22vh;
+    margin: 1.5rem;
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+    margin-left: 0;
   }
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
     transition: 0.2s ease-in;
   }
 
@@ -32,7 +35,6 @@
       rgba(240, 244, 253, 0.2) 90%
     );
     padding: 8px;
-
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -59,7 +61,8 @@
       font-size: 14px;
       line-height: 24px;
       @media screen and (min-width: 1200px) {
-        font-size: 1.5rem;
+        width: 115% !important;
+        font-size: 1.2rem;
       }
     }
 
@@ -89,7 +92,7 @@
     top: 12px;
     color: #fff;
     @media screen and (min-width: 1200px) {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       background-color: rgba(139, 156, 163, 0.8);
     }
   }

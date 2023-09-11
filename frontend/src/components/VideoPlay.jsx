@@ -70,6 +70,7 @@ function VideoPlay({ video, videoDate }) {
   return (
     <div className="video-play-container">
       <Player
+        className="react-player"
         poster={`${BACKEND_URL}/api/videos/${video.img}`}
         autoPlay
         height={450}

@@ -5,8 +5,8 @@
   margin: auto;
   margin-bottom: 2rem;
   @media screen and (min-width: 1200px) {
-    height: 70vh;
-    width: 95vw;
+    height: 60vh;
+    width: 80%;
     margin: auto;
     margin-top: 1rem;
   }
@@ -34,7 +34,7 @@
   .carrouselImg {
     border-radius: 1rem;
     @media screen and (min-width: 1200px) {
-      height: 70vh;
+      max-height: 60vh;
     }
   }
 }

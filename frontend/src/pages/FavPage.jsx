@@ -36,18 +36,22 @@ export default function FavPage() {
       <ReturnPageButton />
       <h2>Favoris</h2>
       <div className="favorite-container">
-        {favortieVideos.map((video) => (
-          <div className="favorite-box" key={video.id}>
-            <VideoBox video={video} />
-            <button
-              className="favContainer"
-              type="button"
-              onClick={() => deleteFav(user.id, video.id)}
-            >
-              <li className="favorite" />
-            </button>
-          </div>
-        ))}
+        {favortieVideos.length > 0 ? (
+          favortieVideos.map((video) => (
+            <div className="favorite-box" key={video.id}>
+              <VideoBox video={video} />
+              <button
+                className="favContainer"
+                type="button"
+                onClick={() => deleteFav(user.id, video.id)}
+              >
+                <li className="favorite" />
+              </button>
+            </div>
+          ))
+        ) : (
+          <h4>Aucun favoris...</h4>
+        )}
       </div>
       <Navbar />
     </div>
