@@ -217,7 +217,6 @@ function Profil() {
             <input
               type="text"
               value={newUserInfos.email}
-              pattern="(/^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+.$/gm"
               required
               title='Veuillez entrer une adresse mail valide. Exemple: "exemple@mail.fr'
               minLength={6}
