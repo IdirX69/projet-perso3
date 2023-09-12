@@ -1,7 +1,51 @@
 .profil-container {
   background-color: $black;
-  width: 100vw;
-  margin-bottom: 8.5vh;
+  width: 100%;
+  padding-bottom: 10.5vh;
+  .profil-img {
+    width: 100%;
+    img {
+      max-height: 400px;
+      width: 100%;
+      display: flex;
+      @media screen and (min-width: 1200px) {
+        padding-top: 1rem;
+        width: 80%;
+        margin: auto;
+        border-radius: 10px;
+        border: 1px solid $color-2;
+      }
+    }
+    .avatar-img {
+      width: 120px;
+      border-radius: 50%;
+      position: relative;
+      bottom: 60px;
+      margin: auto;
+      border: 1px solid rgba(87, 209, 76, 0.797);
+      @media screen and (min-width: 1200px) {
+        height: 130px;
+        width: 130px;
+      }
+    }
+  }
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 40px;
+    input {
+      display: none;
+    }
+    label,
+    button {
+      all: unset;
+      width: 60px;
+      margin-left: 1rem;
+      background-color: blue;
+    }
+  }
 
   .profil-info {
     width: 100%;
@@ -25,11 +69,6 @@
     }
   }
 
-  p {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 4rem;
-  }
   .modify-info {
     input {
       display: flex;
@@ -52,39 +91,6 @@
       margin-top: 10px;
     }
   }
-  .avatar-container {
-    height: 5vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    .avatar {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      width: 100%;
-      padding: 5px;
-      border-radius: 10px;
-      margin: auto;
-      margin-bottom: 0;
-
-      img {
-        max-height: 100px;
-        max-width: 100px;
-        margin: auto;
-        border-radius: 50px;
-      }
-      form {
-        display: flex;
-        flex-direction: column;
-        input {
-          display: none;
-        }
-      }
-    }
-  }
 }
 
 .containerbtn-profil {
@@ -94,12 +100,11 @@
 .containerul {
   margin: 5vh;
 }
-.containerName {
+p {
   font-size: 3vh;
   font-family: $font-2;
-  position: relative;
-  top: 7vh;
-  margin-bottom: 4vh;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 .container-img {
   @extend .loginImg;
