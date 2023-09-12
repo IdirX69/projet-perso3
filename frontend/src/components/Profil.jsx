@@ -11,7 +11,6 @@ function Profil() {
 
   const navigate = useNavigate();
   const { user, setUser, token } = useContext(CurrentUserContext);
-  const [msg, setMsg] = useState("");
   const [modifyInfos, setModifyInfos] = useState(false);
 
   const unlogToast = () =>
@@ -118,42 +117,37 @@ function Profil() {
         .then((results) => {
           // maj avatar
           setUser({ ...user, avatar: results.avatar });
-          setMsg("Upload réussi !");
+          saveInfosChangeToast();
         })
         .catch((error) => {
           console.error(error);
-          setMsg("Upload échoué !");
         });
-    } else {
-      setMsg("Aucun fichier");
     }
   };
+
   return (
     <div className="profil-container">
-      <div>
-        <img className="container-img" src={Imglog} alt="img" />
+      <div className="profil-img">
+        <img src={Imglog} alt="img" />
+        <img
+          className="avatar-img"
+          src={`${BACKEND_URL}/api/avatars/${user.avatar}`}
+          alt="avatar"
+          onError={handleOnError}
+        />
+        <form encType="multipart/form-data" onSubmit={handleSubmit}>
+          <label htmlFor="file" className="form-label">
+            Modifier
+          </label>
+          <input type="file" ref={avatarRef} id="file" />
+          <button type="submit">Envoyer</button>
+        </form>
       </div>
-      <div className="avatar-container">
-        <div className="avatar">
-          <img
-            src={`${BACKEND_URL}/api/avatars/${user.avatar}`}
-            alt="avatar"
-            onError={handleOnError}
-          />
-          <form encType="multipart/form-data" onSubmit={handleSubmit}>
-            <label htmlFor="file" className="form-label">
-              Cliquez ici pour changer l'avatar
-            </label>
-            <input type="file" ref={avatarRef} id="file" />
-            <button type="submit">Envoyer</button>
-            <p>{msg}</p>
-          </form>
-        </div>
-      </div>
-      <p className="containerName">
-        {user.firstname} {user.lastname}
-      </p>
+
       <div className="profil-info">
+        <p>
+          {user.firstname} {user.lastname}
+        </p>
         {modifyInfos ? (
           <button
             type="button"

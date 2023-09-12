@@ -2,7 +2,7 @@
   border-radius: 12px;
   overflow: hidden;
   width: 40vw;
-  height: 20vh;
+  height: 17vh;
   position: relative;
   margin: 5vw;
   z-index: 0;
@@ -16,9 +16,12 @@
   }
   img {
     width: 100%;
-    height: 100%;
+    height: 90%;
     object-fit: fill;
     transition: 0.2s ease-in;
+    @media screen and (min-width: 1200px) {
+      object-fit: fill;
+    }
   }
 
   &:hover img {

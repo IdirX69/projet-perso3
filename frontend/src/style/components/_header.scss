@@ -5,4 +5,72 @@
   background: $color-2;
   display: flex;
   justify-content: flex-start;
+
+  .search-bar {
+    display: none;
+    @media screen and (min-width: 1200px) {
+      margin: auto;
+      margin-right: 2rem;
+      display: flex;
+      img {
+        margin-top: 5px;
+        padding: 5px;
+        height: 32px;
+        width: 30px;
+        margin-left: 2px;
+        background-color: white;
+        position: absolute;
+        border-radius: 8px;
+      }
+    }
+  }
+
+  nav {
+    display: none;
+    @media screen and (min-width: 1200px) {
+      display: flex;
+      width: 30%;
+      justify-content: space-around;
+      margin: auto;
+      margin-left: 30%;
+    }
+  }
+  .search-input {
+    @media screen and (min-width: 1200px) {
+      height: 42px;
+      width: 280px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      outline: none;
+      padding-left: 33px;
+      border-bottom: 1px solid rgba($color-2, 0.8);
+    }
+  }
+  .profil-img {
+    display: none;
+    @media screen and (min-width: 1200px) {
+      display: block;
+      width: 55px;
+      height: 55px;
+      margin: auto;
+      margin-right: 2.5rem;
+      border-radius: 50%;
+      border: 1px solid rgba(87, 209, 76, 0.897);
+    }
+    img {
+      @media screen and (min-width: 1200px) {
+        object-fit: contain;
+        border-radius: 50%;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+  .active {
+    color: rgb(255, 255, 255);
+  }
+  a {
+    color: white;
+    text-decoration: none;
+  }
 }
