@@ -1,8 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import CurrentVideosContext from "../../contexts/videosContext";
-
-import Header from "../components/Header";
 import Slider from "../components/Slider";
 import Comment from "../components/Comment";
 import VideoPlay from "../components/VideoPlay";
@@ -31,7 +29,6 @@ function VideoPlayer() {
   }, [selectedId]);
   return (
     <div className="player-page">
-      <Header />
       <VideoPlay video={videoPlayed} videoDate={videoDate} />
       <Slider />
       <Comment
