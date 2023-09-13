@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Joi from "joi-browser";
-import Navbar from "./Navbar";
 import loginImg from "../asset/image/loginImg.jpeg";
 import logo from "../asset/image/logo.svg";
 
@@ -163,7 +162,6 @@ function Register() {
           </button>
         </Link>
       </div>{" "}
-      <Navbar />
     </div>
   );
 }

@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useContext, useState, useEffect } from "react";
 import ReturnPageButton from "../components/ReturnPageButton";
 import CurrentVideosContext from "../../contexts/videosContext";
-import Navbar from "../components/Navbar";
 import VideoBox from "../components/VideoBox";
 
 export default function SearchPage({ selectedCategory, setSelectedCategory }) {
@@ -76,8 +75,6 @@ export default function SearchPage({ selectedCategory, setSelectedCategory }) {
             </div>
           )}
         </div>
-
-        <Navbar />
       </div>
     </>
   );

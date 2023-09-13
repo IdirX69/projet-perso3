@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useEffect, useState, useContext } from "react";
 import Modal from "react-modal";
 import CurrentUserContext from "../../contexts/userContext";
-import Navbar from "./Navbar";
 import ReturnPageButton from "./ReturnPageButton";
 
 export default function UsersTable() {
@@ -200,7 +199,7 @@ export default function UsersTable() {
           </div>
         </div>
       )}
-      <Navbar />
+
       <Modal
         ariaHideApp={false}
         isOpen={modalIsOpen}

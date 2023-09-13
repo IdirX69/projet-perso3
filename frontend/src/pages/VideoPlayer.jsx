@@ -3,7 +3,6 @@ import axios from "axios";
 import CurrentVideosContext from "../../contexts/videosContext";
 
 import Header from "../components/Header";
-import Navbar from "../components/Navbar";
 import Slider from "../components/Slider";
 import Comment from "../components/Comment";
 import VideoPlay from "../components/VideoPlay";
@@ -39,7 +38,6 @@ function VideoPlayer() {
         currentVideoComments={currentVideoComments}
         setCurrentVideoComments={setCurrentVideoComments}
       />
-      <Navbar />
     </div>
   );
 }

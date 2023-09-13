@@ -1,7 +1,6 @@
 import React from "react";
 import VideoList from "../components/VideoList";
 import ReturnPageButton from "../components/ReturnPageButton";
-import Navbar from "../components/Navbar";
 
 export default function PlaylistPage() {
   return (
@@ -13,7 +12,6 @@ export default function PlaylistPage() {
       <div>
         <VideoList />
       </div>
-      <Navbar />
     </div>
   );
 }
