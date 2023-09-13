@@ -1,6 +1,7 @@
 /*Fonts*/
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@1,200&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
 /*Colors var*/
 /*Mixin functions*/
 /*Base style*/
@@ -674,6 +675,12 @@ h5 {
   display: flex;
   justify-content: flex-start;
 }
+@media screen and (min-width: 1200px) {
+  .header-container {
+    background: none;
+    font-family: "Montserrat", sans-serif;
+  }
+}
 .header-container .search-bar {
   display: none;
 }
@@ -741,10 +748,11 @@ h5 {
   }
 }
 .header-container .active {
-  color: rgb(255, 255, 255);
+  color: white;
+  text-decoration: underline;
 }
 .header-container a {
-  color: white;
+  color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
 }
 
@@ -1141,13 +1149,6 @@ h5 {
 
 .containerul {
   margin: 5vh;
-}
-
-p {
-  font-size: 3vh;
-  font-family: "Roboto Condensed", sans-serif;
-  text-align: center;
-  margin-bottom: 1rem;
 }
 
 .container-input {

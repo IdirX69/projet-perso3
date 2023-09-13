@@ -5,6 +5,10 @@
   background: $color-2;
   display: flex;
   justify-content: flex-start;
+  @media screen and (min-width: 1200px) {
+    background: none;
+    font-family: $font-3;
+  }
 
   .search-bar {
     display: none;
@@ -67,10 +71,11 @@
     }
   }
   .active {
-    color: rgb(255, 255, 255);
+    color: white;
+    text-decoration: underline;
   }
   a {
-    color: white;
+    color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
   }
 }
