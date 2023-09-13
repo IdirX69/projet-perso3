@@ -195,9 +195,11 @@ li {
 
 .backButton {
   position: relative;
+  left: 0;
+  top: 0;
+  margin: 1rem;
   background: none;
   border: none;
-  margin: 1.5rem 1rem;
 }
 
 .loginContainer {
@@ -575,7 +577,7 @@ h5 {
   width: 100%;
   height: 100%;
   background: linear-gradient(0deg, rgba(0, 16, 34, 0.8) 0%, rgba(240, 244, 253, 0.2) 90%);
-  padding: 8px;
+  padding: 2px 4px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -593,6 +595,7 @@ h5 {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-align: start;
 }
 .image-wrapper .video-name.medium,
 .image-wrapper .video-subtext.medium {
@@ -990,8 +993,6 @@ h5 {
 
 .carrouselContainer {
   border-radius: 0.5rem;
-  border: solid 1px;
-  border-color: #00284d;
   margin: auto;
   margin-bottom: 2rem;
 }
@@ -1013,7 +1014,8 @@ h5 {
   margin-left: -50% !important;
   font-family: "Nunito", sans-serif !important;
   opacity: 0.9 !important;
-  padding-left: 15px !important;
+  padding-left: 5px !important;
+  bottom: 0 !important;
 }
 @media screen and (min-width: 1200px) {
   .carrouselContainer .legend {
@@ -1083,7 +1085,10 @@ h5 {
   all: unset;
   width: 60px;
   margin-left: 1rem;
-  background-color: blue;
+  background-color: #052e52;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 .profil-container .profil-info {
   width: 100%;
@@ -2299,7 +2304,7 @@ body.video-react-full-window .video-react-fullscreen {
   outline: none;
   background-color: #00284d;
 }
-.upload-container button {
+.upload-container .form-controll button {
   padding: 8px 30px;
   background: rgba(255, 255, 255, 0.8);
   color: #053777;

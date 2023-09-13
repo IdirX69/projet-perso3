@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import Login from "../components/Login";
-import Navbar from "../components/Navbar";
 import CurrentUserContext from "../../contexts/userContext";
 import Profil from "../components/Profil";
 
@@ -9,7 +8,6 @@ function ProfilePage() {
   return (
     <div className="profilPageContainer">
       {user.email ? <Profil /> : <Login />}
-      <Navbar />
     </div>
   );
 }

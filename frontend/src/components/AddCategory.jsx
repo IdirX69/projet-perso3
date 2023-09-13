@@ -3,7 +3,6 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ReturnPageButton from "./ReturnPageButton";
-import Navbar from "./Navbar";
 
 function AddCategory() {
   const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
@@ -103,8 +102,6 @@ function AddCategory() {
             </button>
           </div>
         </form>
-
-        <Navbar />
       </div>
       <ToastContainer />
     </>

@@ -3,7 +3,6 @@ import axios from "axios";
 import VideoBox from "../components/VideoBox";
 import ReturnPageButton from "../components/ReturnPageButton";
 import CurrentUserContext from "../../contexts/userContext";
-import Navbar from "../components/Navbar";
 
 export default function FavPage() {
   const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
@@ -53,7 +52,6 @@ export default function FavPage() {
           <h4>Aucun favoris...</h4>
         )}
       </div>
-      <Navbar />
     </div>
   );
 }

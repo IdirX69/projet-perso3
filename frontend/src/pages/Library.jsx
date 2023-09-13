@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import Favorites from "../components/Favorites";
 import ReturnPageButton from "../components/ReturnPageButton";
 
@@ -11,7 +10,6 @@ function Library() {
       <div className="libraryPage">
         <Favorites />
       </div>
-      <Navbar />
     </div>
   );
 }
