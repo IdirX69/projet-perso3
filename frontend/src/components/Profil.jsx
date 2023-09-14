@@ -129,6 +129,9 @@ function Profil() {
     <div className="profil-container">
       <div className="profil-img">
         <img src={Imglog} alt="img" />
+      </div>
+
+      <div className="profil-info">
         <img
           className="avatar-img"
           src={`${BACKEND_URL}/api/avatars/${user.avatar}`}
@@ -142,9 +145,6 @@ function Profil() {
           <input type="file" ref={avatarRef} id="file" />
           <button type="submit">Envoyer</button>
         </form>
-      </div>
-
-      <div className="profil-info">
         <p>
           {user.firstname} {user.lastname}
         </p>

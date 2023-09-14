@@ -1,57 +1,62 @@
 .profil-container {
   background-color: $black;
   width: 100%;
-  padding-bottom: 10.5vh;
+
+  padding-bottom: 7.5vh;
+  @media screen and (min-width: 1200px) {
+    height: 91.5vh;
+    padding-bottom: 0;
+    display: flex;
+  }
   .profil-img {
     width: 100%;
+    @media screen and (min-width: 1200px) {
+      height: 100%;
+      width: 50%;
+    }
     img {
-      max-height: 400px;
       width: 100%;
+      height: 100%;
       display: flex;
       @media screen and (min-width: 1200px) {
-        padding-top: 1rem;
-        width: 80%;
-        margin: auto;
+        height: 100%;
         border-radius: 10px;
-        border: 1px solid $color-2;
-      }
-    }
-    .avatar-img {
-      width: 120px;
-      border-radius: 50%;
-      position: relative;
-      bottom: 60px;
-      margin: auto;
-      border: 1px solid rgba(87, 209, 76, 0.797);
-      @media screen and (min-width: 1200px) {
-        height: 130px;
-        width: 130px;
+        margin: 1px;
+        object-fit: cover;
+        border-right: 1px solid $color-2;
       }
     }
   }
-  form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    bottom: 40px;
-    input {
-      display: none;
-    }
-    label,
-    button {
-      all: unset;
-      width: 60px;
-      margin-left: 1rem;
-      background-color: #052e52;
-      padding: 8px;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-  }
-
   .profil-info {
-    width: 100%;
+    @media screen and (min-width: 1200px) {
+      height: 90%;
+      width: 30%;
+      margin: auto;
+      margin-bottom: 0;
+    }
+    form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      bottom: 40px;
+      input {
+        display: none;
+      }
+      label,
+      button {
+        all: unset;
+        width: 60px;
+        margin-left: 1rem;
+        background-color: #052e52;
+        padding: 8px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+    }
+    p {
+      text-align: center;
+    }
     button {
       background: linear-gradient(180deg, $color-2 0%, rgba(1, 28, 51, 0) 100%);
       border-radius: 8px;
@@ -66,14 +71,20 @@
       @media screen and (min-width: 1200px) {
       }
     }
-    @media screen and (min-width: 1200px) {
-      height: 50vh;
-      width: 35%;
-      margin: auto;
-      margin-top: 3rem;
-    }
   }
 
+  .avatar-img {
+    width: 120px;
+    border-radius: 50%;
+    position: relative;
+    bottom: 60px;
+    left: calc(50% - 60px);
+    border: 1px solid rgba(87, 209, 76, 0.797);
+    @media screen and (min-width: 1200px) {
+      height: 130px;
+      width: 130px;
+    }
+  }
   .modify-info {
     input {
       display: flex;
