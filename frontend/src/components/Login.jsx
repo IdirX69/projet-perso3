@@ -61,15 +61,13 @@ function Login() {
 
   return (
     <>
-      <div>
-        <img className="loginImg" src={loginImg} alt="loginImg" />
+      <div className="login-img-wrapper">
+        <img className="background-img" src={loginImg} alt="loginImg" />
+        <img className="logo-img" src={logo} alt="logo" />
       </div>
-      <div className="loginLogoContainer">
-        <img className="loginLogo" src={logo} alt="logo" />
-      </div>
-      <h2 className="loginTitle">Connectez-vous</h2>
-      <form className="formContainer" onSubmit={handleSubmit}>
-        <div className="inputContainer">
+      <h2>Connectez-vous</h2>
+      <form onSubmit={handleSubmit}>
+        <div className="login-input-container">
           <label htmlFor="email" className="form-label">
             Email
           </label>
@@ -83,7 +81,7 @@ function Login() {
             maxLength={100}
           />
         </div>
-        <div className="inputContainer">
+        <div className="login-input-container">
           <label htmlFor="password" className="form-label">
             Password
           </label>
@@ -97,22 +95,18 @@ function Login() {
             maxLength={100}
           />
         </div>
-        <button className="loginButton" type="submit" onClick={loginToast}>
+        <button type="submit" onClick={loginToast}>
           Connexion
         </button>
         {errorMessage !== "" ? <div>{errorMessage}</div> : ""}
       </form>
-      <div className="registerContainer">
-        <h3 className="noAccountTitle">Vous n'avez pas de compte ?</h3>
+      <div className="create-account-btns">
+        <h3>Vous n'avez pas de compte ?</h3>
         <Link to="/register">
-          <button type="button" className="registerButton">
-            S'inscrire
-          </button>
+          <button type="button">S'inscrire</button>
         </Link>
         <Link to="/forgotPassword">
-          <button type="button" className="registerButton">
-            Mot de passe oubliée ?
-          </button>
+          <button type="button">Mot de passe oubliée ?</button>
         </Link>
       </div>
     </>
