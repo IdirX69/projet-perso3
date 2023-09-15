@@ -1,0 +1,35 @@
+version: "3.3"
+services:
+  origins_digital_mysql:
+    container_name: origins_digital_mysql
+    image: mysql
+    restart: always
+    env_file:
+      - .env
+    environment:
+      MYSQL_DATABASE: "origins_digital"
+      MYSQL_USER: "idir"
+      MYSQL_PASSWORD: "idiridir"
+      MYSQL_ROOT_PASSWORD: "root"
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    volumes:
+      - ./origins_digital:/var/lib/mysql
+
+  app:
+    depends_on:
+      - origins_digital_mysql
+    build: .
+    restart: unless-stopped
+    ports:
+      - "5050:5050"
+    env_file:
+      - .env
+    environment:
+      - DB_HOST=origins_digital_mysql
+      - DB_USER=idir
+      - DB_PASSWORD=idiridir
+      - DB_NAME=origins_digital
+      - DB_PORT=3306
