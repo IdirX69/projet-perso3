@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Joi from "joi-browser";
 import loginImg from "../asset/image/loginImg.jpeg";
 import logo from "../asset/image/logo.svg";
@@ -54,15 +54,13 @@ function Register() {
   };
 
   return (
-    <div>
-      <div>
-        <img className="loginImg" src={loginImg} alt="loginImg" />
+    <div className="register-container">
+      <div className="register-img-wrapper">
+        <img className="background-img" src={loginImg} alt="loginImg" />
+        <img className="logo-img" src={logo} alt="logo" />
       </div>
-      <div className="loginLogoContainer">
-        <img className="loginLogo" src={logo} alt="logo" />
-      </div>
-      <form className="formContainer" onSubmit={handleForm}>
-        <div className="inputContainer">
+      <form onSubmit={handleForm}>
+        <div className="rgister-input-container">
           <label htmlFor="firstname" className="form-label">
             Prénom
           </label>
@@ -74,14 +72,13 @@ function Register() {
               })
             }
             type="firstname"
-            className="loginInput"
             id="firstname"
             required
             minLength={2}
             maxLength={100}
           />
         </div>
-        <div className="inputContainer">
+        <div className="rgister-input-container">
           <label htmlFor="lastname" className="form-label">
             Nom
           </label>
@@ -97,7 +94,7 @@ function Register() {
             name="lastname"
           />
         </div>
-        <div className="inputContainer">
+        <div className="rgister-input-container">
           <label htmlFor="email" className="form-label">
             Email
           </label>
@@ -115,7 +112,7 @@ function Register() {
             name="email"
           />
         </div>
-        <div className="inputContainer">
+        <div className="rgister-input-container">
           <label htmlFor="password" className="form-label">
             Mot de passe
           </label>
@@ -125,7 +122,6 @@ function Register() {
             }
             type="password"
             pattern={pattern}
-            className="loginInput"
             required
             minLength={8}
             maxLength={100}
@@ -133,14 +129,13 @@ function Register() {
             name="password"
           />
         </div>
-        <div className="inputContainer">
+        <div className="rgister-input-container">
           <label htmlFor="password" className="form-label">
             Confirmer votre mot de passe
           </label>
           <input
             type="password"
             pattern={pattern}
-            className="loginInput"
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
             title='Veuillez entrer une adresse mail valide. Exemple: "exemple@mail.fr'
@@ -155,13 +150,6 @@ function Register() {
           Inscription
         </button>
       </form>
-      <div className="returnContainer">
-        <Link to="/login">
-          <button type="button" className="returnButton">
-            Retour
-          </button>
-        </Link>
-      </div>{" "}
     </div>
   );
 }

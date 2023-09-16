@@ -876,6 +876,78 @@ h5 {
   transform: translate(-50%, -50%);
 }
 
+.register-container {
+  width: 100%;
+}
+.register-container .register-img-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.register-container .register-img-wrapper .background-img {
+  width: 100%;
+}
+@media screen and (min-width: 1200px) {
+  .register-container .register-img-wrapper .background-img {
+    width: 60%;
+    height: 370px;
+    border-radius: 10px;
+    border-bottom: 1px solid #006dce;
+    margin: auto;
+    margin-top: 2px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+.register-container .register-img-wrapper .logo-img {
+  position: relative;
+  top: -60px;
+  height: 120px;
+  width: 120px;
+  border: 1px solid #00284d;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.068);
+  border-radius: 10px;
+}
+.register-container form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (min-width: 1200px) {
+  .register-container form {
+    width: 40%;
+    margin: auto;
+  }
+}
+.register-container form .rgister-input-container {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+.register-container form label {
+  margin: 10px 2px;
+}
+.register-container form input {
+  height: 2.5rem;
+  width: 100%;
+  background-color: #00284d;
+  border: 1px solid #006dce;
+  border-radius: 6px;
+}
+.register-container form button {
+  margin: 1.2rem;
+  width: 50%;
+  height: 3rem;
+  border-radius: 6px;
+  background-color: #006dce;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
 .carrouselContainer {
   border-radius: 0.5rem;
   margin: auto;
@@ -937,7 +1009,7 @@ h5 {
 @media screen and (min-width: 1200px) {
   .profil-container .profil-img {
     height: 100%;
-    width: 50%;
+    width: 40%;
   }
 }
 .profil-container .profil-img img {
