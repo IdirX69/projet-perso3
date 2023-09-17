@@ -650,26 +650,6 @@ h5 {
     font-family: "Montserrat", sans-serif;
   }
 }
-.header-container .search-bar {
-  display: none;
-}
-@media screen and (min-width: 1200px) {
-  .header-container .search-bar {
-    margin: auto;
-    margin-right: 2rem;
-    display: flex;
-  }
-  .header-container .search-bar img {
-    margin-top: 5px;
-    padding: 5px;
-    height: 32px;
-    width: 30px;
-    margin-left: 2px;
-    background-color: white;
-    position: absolute;
-    border-radius: 8px;
-  }
-}
 .header-container nav {
   display: none;
 }
@@ -679,7 +659,7 @@ h5 {
     width: 30%;
     justify-content: space-around;
     margin: auto;
-    margin-left: 30%;
+    margin-left: 50%;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -736,7 +716,7 @@ h5 {
   .comment {
     width: 80%;
     margin: auto;
-    padding-bottom: 8vh;
+    padding-bottom: 0;
   }
 }
 .comment .comment-form {
@@ -802,7 +782,7 @@ h5 {
   text-align: center;
   align-self: baseline;
   font-family: "Roboto Condensed", sans-serif;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 .comment .comment-img img {
   height: 40px;
@@ -810,11 +790,23 @@ h5 {
   width: 40px;
   margin: 5px;
 }
+@media screen and (min-width: 1200px) {
+  .comment .comment-img img {
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+  }
+}
 .comment .comment-content {
-  width: 100%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+@media screen and (min-width: 1200px) {
+  .comment .comment-content {
+    width: 92%;
+  }
 }
 .comment .comment-content h5 {
   font-size: 0.7rem;
@@ -823,6 +815,20 @@ h5 {
   padding-left: 0.7rem;
   font-family: "Roboto Condensed", sans-serif;
   align-self: baseline;
+}
+@media screen and (min-width: 1200px) {
+  .comment .comment-content h5 {
+    font-size: 0.9rem;
+  }
+}
+.comment .comment-content p {
+  word-wrap: break-word;
+  width: 100%;
+}
+@media screen and (min-width: 1200px) {
+  .comment .comment-content p {
+    font-size: 1.1rem;
+  }
 }
 .comment .comment-message {
   margin: auto;

@@ -7,7 +7,7 @@
   @media screen and (min-width: 1200px) {
     width: 80%;
     margin: auto;
-    padding-bottom: 8vh;
+    padding-bottom: 0;
   }
   .comment-form {
     display: flex;
@@ -69,7 +69,7 @@
       text-align: center;
       align-self: baseline;
       font-family: $font-2;
-      margin-top: 5px;
+      margin-top: 10px;
     }
 
     img {
@@ -77,13 +77,21 @@
       border-radius: 40px;
       width: 40px;
       margin: 5px;
+      @media screen and (min-width: 1200px) {
+        width: 50px;
+        height: 50px;
+        margin: 15px;
+      }
     }
   }
   .comment-content {
-    width: 100%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @media screen and (min-width: 1200px) {
+      width: 92%;
+    }
     h5 {
       font-size: 0.7rem;
       margin: 2px;
@@ -91,6 +99,16 @@
       padding-left: 0.7rem;
       font-family: $font-2;
       align-self: baseline;
+      @media screen and (min-width: 1200px) {
+        font-size: 0.9rem;
+      }
+    }
+    p {
+      word-wrap: break-word;
+      width: 100%;
+      @media screen and (min-width: 1200px) {
+        font-size: 1.1rem;
+      }
     }
   }
   .comment-message {
