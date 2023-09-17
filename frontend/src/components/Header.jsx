@@ -17,16 +17,11 @@ function Header() {
         <NavLink to="/favorites">
           <li>Favoris</li>
         </NavLink>
+        <NavLink to="/search">
+          <li>Videos</li>
+        </NavLink>
       </nav>
-      <div className="search-bar">
-        <input className="search-input" type="text" placeholder="Rechercher" />
-        <img
-          width="16"
-          height="16"
-          src="https://img.icons8.com/office/16/search--v1.png"
-          alt="search--v1"
-        />{" "}
-      </div>
+
       <div className="profil-img">
         <NavLink to="/login">
           <img

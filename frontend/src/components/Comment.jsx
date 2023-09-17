@@ -85,7 +85,7 @@ function Comment({ currentVideoComments, setCurrentVideoComments }) {
   Modal.defaultStyles.content.border = "#333333CC";
 
   return (
-    <div>
+    <>
       <div className="comment">
         <form onSubmit={handleSubmit} className="comment-form">
           <div className="comment-img">
@@ -174,7 +174,7 @@ function Comment({ currentVideoComments, setCurrentVideoComments }) {
           </button>
         </div>
       </Modal>
-    </div>
+    </>
   );
 }
 
