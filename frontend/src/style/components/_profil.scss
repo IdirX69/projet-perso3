@@ -12,7 +12,7 @@
     width: 100%;
     @media screen and (min-width: 1200px) {
       height: 100%;
-      width: 50%;
+      width: 40%;
     }
     img {
       width: 100%;
@@ -115,17 +115,4 @@
 }
 .containerul {
   margin: 5vh;
-}
-
-.container-img {
-  @extend .loginImg;
-}
-
-.container-input {
-  @extend .loginInput;
-  background: $color-2;
-  border: none;
-  width: 70%;
-  height: 100%;
-  margin-left: 3vh;
 }

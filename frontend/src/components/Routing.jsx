@@ -27,6 +27,11 @@ export default function Routing() {
           <Route path="/" element={<ProfilePage />} />
           <Route path="/login" element={<ProfilePage />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/forgotpassword" element={<ForgottenPassword />} />
+          <Route
+            path="/api/resetpassword/:passwordToken"
+            element={<ResetPassword />}
+          />
         </>
       ) : (
         <>
@@ -52,11 +57,6 @@ export default function Routing() {
           <Route path="/usersManagement" element={<UsersTable />} />
           <Route path="/videosManagement" element={<VideosTable />} />
           <Route path="/addCategory" element={<AddCategory />} />
-          <Route path="/forgotpassword" element={<ForgottenPassword />} />
-          <Route
-            path="/api/resetpassword/:passwordToken"
-            element={<ResetPassword />}
-          />
         </>
       )}
     </Routes>

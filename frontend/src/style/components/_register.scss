@@ -1,87 +1,67 @@
-.loginLogoContainer {
-  height: 15vh;
-  width: 15vh;
-  top: 18vh;
-  left: 16vh;
-  background-color: $black;
-  border: 1px solid $black;
-  border-radius: 2vh;
-  box-shadow: slategray;
-  border-color: $color-2;
-  .loginLogo {
-    bottom: 1vh;
-    left: 0rem;
-    height: 120px;
-    width: 128px;
-  }
-  p {
-    width: 100vw;
-    text-align: center;
-  }
-}
-
-.loginImg {
-  height: 30vh;
+.register-container {
   width: 100%;
-  border-radius: 2vh;
-  border: solid 2px;
-  border-color: $color-2;
-}
-
-.inputContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  .loginInput {
-    height: 6vh;
-    width: 80vw;
-    border-radius: 8px;
-    background-color: #011c33;
-    border-color: #012748;
-    color: $white;
-    padding-left: 2%;
-    position: relative;
-    &:focus {
-      outline: none;
-      border-bottom: 1px solid $color-1;
-      &::placeholder {
-        color: transparent;
+  .register-img-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .background-img {
+      width: 100%;
+      @media screen and (min-width: 1200px) {
+        width: 60%;
+        height: 370px;
+        border-radius: 10px;
+        border-bottom: 1px solid $color-1;
+        margin: auto;
+        margin-top: 2px;
+        object-fit: cover;
       }
     }
+    .logo-img {
+      position: relative;
+      top: -60px;
+      height: 120px;
+      width: 120px;
+      border: 1px solid $color-2;
+      margin: auto;
+      background-color: rgba(255, 255, 255, 0.068);
+      border-radius: 10px;
+    }
   }
-}
 
-.loginButton {
-  width: 70vw;
-  height: 7vh;
-  border-radius: 2vh;
-  border: none;
-  color: $white;
-  font-size: 3vh;
-  font-family: $font-1;
-  background-color: $color-1;
-  cursor: pointer;
-  margin-top: 6vh;
-}
-
-.returnContainer {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  margin-top: 2vh;
-  .returnButton {
-    border: none;
-    background: none;
-    color: $white;
-    font-family: $font-1;
-    font-size: large;
-    margin-left: 1vh;
-    text-decoration: underline;
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media screen and (min-width: 1200px) {
+      width: 40%;
+      margin: auto;
+    }
+    .rgister-input-container {
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      margin: 10px 2px;
+    }
+    input {
+      height: 2.5rem;
+      width: 100%;
+      background-color: $color-2;
+      border: 1px solid $color-1;
+      border-radius: 6px;
+    }
+    button {
+      margin: 1.2rem;
+      width: 50%;
+      height: 3rem;
+      border-radius: 6px;
+      background-color: $color-1;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      text-align: center;
+    }
   }
-}
-.error-message {
-  text-align: center;
-  width: 90%;
-  color: brown;
-  margin: 1rem;
 }

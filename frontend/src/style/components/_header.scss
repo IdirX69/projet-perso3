@@ -10,25 +10,6 @@
     font-family: $font-3;
   }
 
-  .search-bar {
-    display: none;
-    @media screen and (min-width: 1200px) {
-      margin: auto;
-      margin-right: 2rem;
-      display: flex;
-      img {
-        margin-top: 5px;
-        padding: 5px;
-        height: 32px;
-        width: 30px;
-        margin-left: 2px;
-        background-color: white;
-        position: absolute;
-        border-radius: 8px;
-      }
-    }
-  }
-
   nav {
     display: none;
     @media screen and (min-width: 1200px) {
@@ -36,7 +17,7 @@
       width: 30%;
       justify-content: space-around;
       margin: auto;
-      margin-left: 30%;
+      margin-left: 50%;
     }
   }
   .search-input {
