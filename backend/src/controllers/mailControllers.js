@@ -8,7 +8,7 @@ const mailjet = Mailjet.apiConnect(
 );
 
 const sendForgottenPassword = (req) => {
-  const body = `créer un nouveau mot de passe,  href="http://localhost:3000/api/resetpassword/${req.user.passwordToken}" cliquez ici !`;
+  const body = `Bonjour ${req.user.firstname} pour modifier votre mot de passe,  <a href="http://localhost:3000/api/resetpassword/${req.user.passwordToken}">cliquez ici !</a> `;
   const request = mailjet.post("send", { version: "v3.1" }).request({
     Messages: [
       {
@@ -29,9 +29,7 @@ const sendForgottenPassword = (req) => {
     ],
   });
   request
-    .then((result) => {
-      console.warn(result.body);
-    })
+    .then(() => {})
     .catch((err) => {
       console.warn(err);
     });
