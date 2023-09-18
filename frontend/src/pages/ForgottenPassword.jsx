@@ -45,7 +45,6 @@ function ForgottenPassword() {
         </label>
         <input
           type="email"
-          pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
           placeholder="john@doe.com"
           required
           value={email}
