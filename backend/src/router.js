@@ -122,11 +122,7 @@ router.post(
 );
 
 // Reset email
-router.post(
-  "/api/forgottenemail",
-  passwordControllers.verifyEmail,
-  mailControllers.sendForgottenEmail
-);
+router.post("/api/forgottenemail", passwordControllers.verifyEmail);
 
 router.post(
   "/api/passwordReset",

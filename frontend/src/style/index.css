@@ -2444,6 +2444,12 @@ body.video-react-full-window .video-react-fullscreen {
 .forgot-password-container h2 {
   margin-bottom: 3rem;
 }
+.forgot-password-container h3 {
+  width: 100%;
+  position: relative;
+  top: 45%;
+  text-align: center;
+}
 .forgot-password-container label {
   display: none;
 }
