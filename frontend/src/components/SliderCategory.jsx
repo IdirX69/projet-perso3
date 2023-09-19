@@ -28,7 +28,7 @@ function SliderCategory({ setSelectedCategory }) {
             <img
               key={category.id}
               className="slider-item"
-              src={category.img}
+              src={`${BACKEND_URL}/api/videos/${category.img}`}
               alt="imgOfSlider"
             />
           </Link>

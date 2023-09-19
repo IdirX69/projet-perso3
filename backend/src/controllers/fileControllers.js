@@ -11,6 +11,7 @@ const imgVideoDirectory = process.env.AVATAR_DIRECTORY || "public/";
 const renameAvatar = (req, res, next) => {
   // TODO : gérer les erreurs
   // On récupère le nom du fichier
+
   const { originalname } = req.file;
 
   // On récupère le nom du fichier
@@ -192,6 +193,7 @@ const uploadVideo = (req, res) => {
       res.sendStatus(500);
     });
 };
+
 const sendVideo = (req, res) => {
   const { fileName } = req.params;
 
