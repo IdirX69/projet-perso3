@@ -32,7 +32,13 @@ router.post(
 
 router.get("/api/category", categoryControllers.browse);
 router.get("/api/category/:id", categoryControllers.read);
-router.post("/api/category", categoryControllers.add);
+router.get("/api/category/:fileName", fileControllers.sendAvatar);
+router.post(
+  "/api/category",
+  upload.single("img"),
+  fileControllers.renameAvatar,
+  categoryControllers.add
+);
 router.put("/api/category/:id", categoryControllers.edit);
 router.delete("/api/category/:id", categoryControllers.destroy);
 
@@ -57,6 +63,7 @@ router.post(
   fileControllers.renameAvatar,
   fileControllers.updateAvatar
 );
+
 router.get("/api/avatars/:fileName", fileControllers.sendAvatar);
 
 router.post(

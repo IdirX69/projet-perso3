@@ -9,10 +9,10 @@ class CategoryManager extends AbstractManager {
     return this.connection.query(`select * from  ${this.table}`);
   }
 
-  insert(category) {
+  insert(img, category) {
     return this.connection.query(
       `insert into ${this.table} (name, img, description ) values (?, ?, ?)`,
-      [category.name, category.img, category.description]
+      [category.name, img, category.description]
     );
   }
 
