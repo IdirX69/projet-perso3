@@ -4,24 +4,19 @@ const router = express.Router();
 const multer = require("multer");
 
 const upload = multer({ dest: process.env.AVATAR_DIRECTORY });
-
 const { hashPassword, verifyPassword, verifyToken } = require("../auth");
 const { validateUser } = require("./validators");
-
 const authControllers = require("./controllers/authControllers");
 const userControllers = require("./controllers/userControllers");
 const fileControllers = require("./controllers/fileControllers");
 const categoryControllers = require("./controllers/categoryControllers");
-
 const favoriteControllers = require("./controllers/favoriteControllers");
 const commentsControllers = require("./controllers/commentsControllers");
-
 const passwordControllers = require("./controllers/passwordControllers");
 const mailControllers = require("./controllers/mailControllers");
 
 // Auth
 router.post("/api/register", validateUser, hashPassword, userControllers.add);
-
 router.post(
   "/api/login",
   authControllers.getUserByEmailWithPasswordAndPassToNext,
@@ -29,7 +24,6 @@ router.post(
 );
 
 // Gestion des categories
-
 router.get("/api/category", categoryControllers.browse);
 router.get("/api/category/:id", categoryControllers.read);
 router.get("/api/category/:fileName", fileControllers.sendAvatar);
@@ -63,9 +57,9 @@ router.post(
   fileControllers.renameAvatar,
   fileControllers.updateAvatar
 );
-
 router.get("/api/avatars/:fileName", fileControllers.sendAvatar);
 
+// Gestion des Vidéos
 router.post(
   "/api/videos",
   verifyToken,
@@ -80,7 +74,6 @@ router.post(
   verifyToken,
   fileControllers.editPromote
 );
-
 router.get("/api/videos", fileControllers.browse);
 router.get("/api/videos/infos/:id", fileControllers.read);
 router.get(
@@ -103,12 +96,7 @@ router.delete(
   commentsControllers.destroy
 );
 
-router.post(
-  "/api/favoris",
-
-  verifyToken,
-  favoriteControllers.addFavorite
-);
+router.post("/api/favoris", verifyToken, favoriteControllers.addFavorite);
 router.get("/api/favoris/:userId", favoriteControllers.getFav);
 router.delete(
   "/api/favoris/:userId/:videoId",
@@ -130,7 +118,6 @@ router.post(
 
 // Reset email
 router.post("/api/forgottenemail", passwordControllers.verifyEmail);
-
 router.post(
   "/api/passwordReset",
   passwordControllers.verifyTokenPassword,
