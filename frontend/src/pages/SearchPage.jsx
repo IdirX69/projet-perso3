@@ -10,7 +10,6 @@ export default function SearchPage({ selectedCategory, setSelectedCategory }) {
   const [search, setSearch] = useState("");
   const [categories, setCategories] = useState([]);
   const { videos, setVideos } = useContext(CurrentVideosContext);
-
   useEffect(() => {
     axios
       .get(`${BACKEND_URL}/api/category/`)

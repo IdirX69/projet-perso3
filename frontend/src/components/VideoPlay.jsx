@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import { Player } from "video-react";
 import CurrentUserContext from "../../contexts/userContext";
 
@@ -7,24 +7,7 @@ function VideoPlay({ video, videoDate }) {
   const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
   const { user, token } = useContext(CurrentUserContext);
-  const [category, setCategory] = useState({});
   const [favortieVideos, setFavoriteVideos] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get(`${BACKEND_URL}/api/favoris/${user.id}`)
-      .then((result) => {
-        setFavoriteVideos(result.data);
-      })
-      .catch((err) => console.error(err));
-
-    axios
-      .get(`${BACKEND_URL}/api/category/${video.category_id}`)
-      .then((response) => {
-        setCategory(response.data);
-      })
-      .catch((err) => console.error(err));
-  }, [video]);
 
   const toggleFavorite = async (userId, videoId) => {
     if (favortieVideos.find((videos) => videos.id === videoId)) {
@@ -83,7 +66,7 @@ function VideoPlay({ video, videoDate }) {
       <p className="video-description">{video.description}</p>
       <div className="interaction">
         <div className="category-play">
-          <h3>{category.name}</h3>
+          <h3>{video.category_name}</h3>
         </div>
         <div className="like-share">
           <button

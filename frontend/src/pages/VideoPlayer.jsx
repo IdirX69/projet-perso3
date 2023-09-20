@@ -22,11 +22,6 @@ function VideoPlayer() {
       .catch((err) => console.error(err));
   }, [selectedId]);
 
-  useEffect(() => {
-    fetch(`${BACKEND_URL}/api/videos/infos/${selectedId}`)
-      .then((res) => res.json())
-      .then((videos) => setCurrentVideoComments(videos.comment));
-  }, [selectedId]);
   return (
     <div className="player-page">
       <VideoPlay video={videoPlayed} videoDate={videoDate} />
