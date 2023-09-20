@@ -28,7 +28,11 @@ function Header() {
           <div className="profil-img">
             <NavLink to="/login">
               <img
-                src={`${BACKEND_URL}/api/avatars/${user.avatar}`}
+                src={
+                  user.avatar
+                    ? `${BACKEND_URL}/api/avatars/${user.avatar}`
+                    : "../../src/asset/image/defaultAvatar.jpeg"
+                }
                 alt={`${user.firstname}'s avatar`}
               />
             </NavLink>
