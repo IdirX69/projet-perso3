@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -30,14 +30,20 @@ function AddCategory() {
     });
   const [category, setCategory] = useState({
     name: "",
-    img: "",
     description: "",
   });
+  const imgRef = useRef(null);
 
   const handleSubmit = (e) => {
+    const formData = new FormData();
+
+    formData.append("img", imgRef.current.files[0]);
+    formData.append("description", category.description);
+    formData.append("name", category.name);
+
     e.preventDefault();
     axios
-      .post(`${BACKEND_URL}/api/category`, category)
+      .post(`${BACKEND_URL}/api/category`, formData)
       .then(() => {
         categoryToast();
       })
@@ -59,15 +65,7 @@ function AddCategory() {
             <label htmlFor="img" className="form-label">
               Image
             </label>
-            <input
-              type="text"
-              id="img"
-              className="form-controll"
-              required="required"
-              onChange={(e) =>
-                setCategory({ ...category, img: e.target.value })
-              }
-            />
+            <input type="file" ref={imgRef} id="img" required="required" />
           </div>
           <div className="form-group">
             <label htmlFor="name" className="form-label">
