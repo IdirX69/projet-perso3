@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import CategoryBox from "./CategoryBox";
 
 function SliderCategory({ setSelectedCategory }) {
   const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
@@ -19,19 +19,11 @@ function SliderCategory({ setSelectedCategory }) {
       <h2>Catégories</h2>
 
       <div className="slider-wrapper">
-        {categorySlider.map((category) => (
-          <Link
-            to="/search"
-            onClick={() => setSelectedCategory(String(category.id))}
-            key={category.id}
-          >
-            <img
-              key={category.id}
-              className="slider-item"
-              src={`${BACKEND_URL}/api/videos/${category.img}`}
-              alt="imgOfSlider"
-            />
-          </Link>
+        {categorySlider?.map((category) => (
+          <CategoryBox
+            category={category}
+            setSelectedCategory={setSelectedCategory}
+          />
         ))}
       </div>
     </div>
