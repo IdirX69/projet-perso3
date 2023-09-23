@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-describe("crud user test", () => {
+describe("CRUD User Tests", () => {
   before(() => {
     cy.request({
       url: "http://localhost:5050/api/users",
@@ -8,22 +8,16 @@ describe("crud user test", () => {
     });
   });
 
-  it("get All", () => {
-    cy.request({
-      url: "http://localhost:5050/api/users",
-    }).then((res) => {
-      expect(res.status).eq(200);
-    });
-  });
+  it("should create a new user", () => {
+    const randomEmail = `idirsdsqe${Math.random()}@idir${Math.random()}.com`;
 
-  it("create", () => {
     cy.request({
       url: "http://localhost:5050/api/register",
       method: "POST",
       body: {
         firstname: "Idir",
         lastname: "Adil",
-        email: `idirsdsqe${Math.random()}@idir.com`,
+        email: randomEmail,
         password: "password123",
       },
     }).then((res) => {
@@ -31,7 +25,23 @@ describe("crud user test", () => {
     });
   });
 
-  it("get All", () => {
+  it("should handle error on create with invalid data", () => {
+    cy.request({
+      url: "http://localhost:5050/api/register",
+      method: "POST",
+      body: {
+        firstname: "Idir",
+        email: "invalid_email", // Adresse e-mail incorrecte
+        password: "password123",
+      },
+      failOnStatusCode: false, // Ne pas échouer automatiquement le test en cas d'erreur
+    }).then((res) => {
+      expect(res.status).not.eq(201);
+      expect(res.status).eq(422);
+    });
+  });
+
+  it("should retrieve all users", () => {
     cy.request({
       url: "http://localhost:5050/api/users",
     }).then((res) => {
@@ -39,11 +49,21 @@ describe("crud user test", () => {
     });
   });
 
-  it("get one", () => {
+  it("should retrieve one user", () => {
     cy.request({
       url: "http://localhost:5050/api/users/1",
     }).then((res) => {
       expect(res.status).eq(200);
+    });
+  });
+
+  it("should handle error when retrieving non-existent user", () => {
+    cy.request({
+      url: "http://localhost:5050/api/users/9999", // ID inconnu
+      failOnStatusCode: false,
+    }).then((res) => {
+      // Vérifiez que la requête a renvoyé un statut d'erreur (404 - Not Found)
+      expect(res.status).eq(404);
     });
   });
 });
