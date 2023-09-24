@@ -1,15 +1,25 @@
 import axios from "axios";
-import React, { useContext, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import ReturnPageButton from "../components/ReturnPageButton";
-import CurrentVideosContext from "../../contexts/videosContext";
+
 import VideoBox from "../components/VideoBox";
 
 export default function SearchPage({ selectedCategory, setSelectedCategory }) {
   const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
-
+  const [videos, setVideos] = useState([]);
   const [search, setSearch] = useState("");
   const [categories, setCategories] = useState([]);
-  const { videos, setVideos } = useContext(CurrentVideosContext);
+
+  useEffect(() => {
+    axios
+      .get(`${BACKEND_URL}/api/videos`)
+      .then((response) => {
+        setVideos(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
   useEffect(() => {
     axios
       .get(`${BACKEND_URL}/api/category/`)
