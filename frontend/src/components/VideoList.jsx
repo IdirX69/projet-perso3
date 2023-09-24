@@ -1,9 +1,21 @@
-import React, { useContext } from "react";
-import CurrentVideosContext from "../../contexts/videosContext";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import VideoBox from "./VideoBox";
 
 function VideoList() {
-  const { videos } = useContext(CurrentVideosContext);
+  const [videos, setVideos] = useState([]);
+  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
+  useEffect(() => {
+    axios
+      .get(`${BACKEND_URL}/api/videos`)
+      .then((response) => {
+        setVideos(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
 
   return (
     <div className="videosContainer">
