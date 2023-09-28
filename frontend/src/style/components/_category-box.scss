@@ -6,12 +6,12 @@
   overflow: hidden;
   @media screen and (min-width: 1200px) {
     width: 25%;
-    height: 200px;
+    height: 150px;
   }
   img {
     width: 100%;
     height: 100%;
-    filter: blur(2.5px);
+    filter: blur(1px);
   }
   p {
     font-family: $font-1;
@@ -29,7 +29,7 @@
     border: none;
     font-weight: 600;
     @media screen and (min-width: 1200px) {
-      top: -110px;
+      top: -90px;
       font-size: 1.5rem;
     }
   }
