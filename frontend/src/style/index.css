@@ -413,6 +413,57 @@ h5 {
   border: none;
 }
 
+.favorite-page-container h2 {
+  margin: 0.7rem;
+}
+@media screen and (min-width: 1200px) {
+  .favorite-page-container h2 {
+    width: 87%;
+    padding: 0;
+    margin: auto;
+    margin-top: 1rem;
+  }
+}
+.favorite-page-container .favorite-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+@media screen and (min-width: 1200px) {
+  .favorite-page-container .favorite-container {
+    width: 87%;
+    margin: auto;
+  }
+}
+.favorite-page-container .favorite-container .favorite-box {
+  width: 50%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 1200px) {
+  .favorite-page-container .favorite-container .favorite-box {
+    width: 23%;
+  }
+}
+.favorite-page-container .favorite-container .favorite-box .favContainer {
+  width: 100%;
+  height: 20%;
+  margin: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: none;
+  border: none;
+}
+.favorite-page-container .favorite-container .favorite-box .favContainer .no-favorite,
+.favorite-page-container .favorite-container .favorite-box .favContainer .favorite {
+  height: 45px;
+  width: 45px;
+  margin: 0;
+  background-size: cover;
+}
+
 .slider-container {
   overflow: hidden;
   padding-bottom: 2%;
@@ -2547,13 +2598,13 @@ h3 {
 @media screen and (min-width: 1200px) {
   .category-box {
     width: 25%;
-    height: 200px;
+    height: 150px;
   }
 }
 .category-box img {
   width: 100%;
   height: 100%;
-  filter: blur(2.5px);
+  filter: blur(1px);
 }
 .category-box p {
   font-family: "Nunito", sans-serif;
@@ -2573,7 +2624,7 @@ h3 {
 }
 @media screen and (min-width: 1200px) {
   .category-box p {
-    top: -110px;
+    top: -90px;
     font-size: 1.5rem;
   }
 }
