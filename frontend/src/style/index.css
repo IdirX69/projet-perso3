@@ -2513,79 +2513,20 @@ body.video-react-full-window .video-react-fullscreen {
   margin-bottom: 2rem;
 }
 
-table {
-  width: 100%;
-  font-size: small;
-}
-table thead {
-  height: 50px;
-  width: 100%;
-}
-table thead h3 {
+.category-list {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: auto;
 }
-table tr {
-  max-height: 20%;
+.category-list div {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-table .columnContainer {
-  max-height: 100px;
-  max-width: 200px;
-  overflow: hidden;
-}
-
-.content {
-  height: 100px;
-  width: 200px;
-  text-align: center;
+  margin: 0.5rem;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
-
-.modifyBtn {
-  text-align: center;
-  padding: 0;
-  margin: 0;
-}
-
-tbody {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.modifContainer {
-  width: 20%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.columnRow {
-  width: 100%;
-}
-
-.modifTd {
-  margin-right: 5px;
-  width: 25%;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-h3 {
-  width: 20%;
-  height: 30%;
-  margin-right: 5px;
-}
-
-.column {
-  margin-right: 15px;
-  width: 25%;
+.category-list div button {
+  margin-left: 1rem;
 }
 
 .category-box {
