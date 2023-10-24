@@ -2514,6 +2514,7 @@ body.video-react-full-window .video-react-fullscreen {
 }
 
 .category-list {
+  padding-bottom: 7vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2527,6 +2528,11 @@ body.video-react-full-window .video-react-fullscreen {
 }
 .category-list div button {
   margin-left: 1rem;
+  background: #006dce;
+  border: none;
+  color: white;
+  padding: 0.3rem;
+  border-radius: 4px;
 }
 
 .category-box {
