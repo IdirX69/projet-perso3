@@ -18,6 +18,7 @@ function CategoryTable() {
   }, [modif, setModif]);
 
   // const deleteCategory = (id) => {
+  //   console.log(id);
   //   axios
   //     .delete(`${backUrl}/api/category/${id}`)
   //     .then((res) => console.log(res))
@@ -38,8 +39,6 @@ function CategoryTable() {
           {allCategory?.map((el) => (
             <CategoryBox key={el.id} category={el} />
           ))}
-        </div>
-        <div>
           <button type="button">Delete</button>
           <button type="button">Edit</button>
         </div>
