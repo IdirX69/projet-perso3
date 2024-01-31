@@ -10,7 +10,6 @@ function CategoryBox({ category, setSelectedCategory }) {
     <div className="category-box">
       <NavLink to="/search" onClick={() => setSelectedCategory(String(id))}>
         <img src={`${BACKEND_URL}/api/videos/${img}`} alt={name} />
-        <p>{name}</p>
       </NavLink>
     </div>
   );

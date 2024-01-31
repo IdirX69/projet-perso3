@@ -16,8 +16,9 @@ function CategoryTable() {
       .then((res) => setAllCategory(res.data))
       .catch((err) => console.error(err));
   }, [modif, setModif]);
-  console.log(allCategory);
+
   // const deleteCategory = (id) => {
+  //   console.log(id);
   //   axios
   //     .delete(`${backUrl}/api/category/${id}`)
   //     .then((res) => console.log(res))
@@ -33,13 +34,11 @@ function CategoryTable() {
   return (
     <>
       <h1>Category List</h1>
-      <div>
+      <div className="category-list">
         <div>
           {allCategory?.map((el) => (
-            <CategoryBox category={el} />
+            <CategoryBox key={el.id} category={el} />
           ))}
-        </div>
-        <div>
           <button type="button">Delete</button>
           <button type="button">Edit</button>
         </div>
