@@ -45,10 +45,10 @@ jobs:
         options: --health-cmd="mysqladmin ping" --health-interval 10s --health-timeout 5s --health-retries 5
 
       env:
-        DB_HOST: origins_digital_mysql
-        DB_USER: idir
+        DB_HOST: localhost
+        DB_USER: root
         DB_PASSWORD: ${{ secrets.CI_DB_PASSWORD }}
-        DB_NAME: origins_digital # Assurez-vous de fournir la valeur correcte ici
+        DB_NAME: origins_digital
 
     steps:
       - uses: actions/checkout@v3
