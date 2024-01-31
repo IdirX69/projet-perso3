@@ -50,13 +50,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Setup .NET Core SDK 6
-        uses: actions/setup-dotnet@v2
+      - name: Set up npm
+        uses: actions/setup-node@v2
         with:
-          dotnet-version: 6.0.x
+          node-version: "18"
 
       - name: Install dependencies
-        run: dotnet restore
+        run: npm install
 
       - name: Test
         run: npm test
