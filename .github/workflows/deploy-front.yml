@@ -2,7 +2,7 @@ name: deploy-front
 
 on:
   push:
-    branches: [dev]
+    branches: [main]
 
 jobs:
   # This workflow contains a single job called "build"
