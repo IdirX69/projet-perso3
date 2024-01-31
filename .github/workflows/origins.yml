@@ -26,9 +26,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Launch test
-        run: npm test
-
   backend-test:
     runs-on: ubuntu-latest
     defaults:
@@ -45,8 +42,8 @@ jobs:
         options: --health-cmd="mysqladmin ping" --health-interval 10s --health-timeout 5s --health-retries 5
 
     env:
-      DB_HOST: origins_digital_mysql
-      DB_USER: idir
+      DB_HOST: localhost
+      DB_USER: root
       DB_PASSWORD: ${{ secrets.CI_DB_PASSWORD }}
       DB_NAME: origins_digital
 
@@ -62,7 +59,7 @@ jobs:
         run: dotnet restore
 
       - name: Test
-        run: dotnet test --no-restore
+        run: npm test
 
   build-image:
     strategy:
