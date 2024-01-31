@@ -9,8 +9,8 @@ services:
     environment:
       MYSQL_DATABASE: "origins_digital"
       MYSQL_USER: "idir"
-      MYSQL_PASSWORD: "idiridir"
-      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
     ports:
       - "3306:3306"
     expose:
