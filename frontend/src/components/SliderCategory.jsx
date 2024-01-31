@@ -20,11 +20,13 @@ function SliderCategory({ setSelectedCategory }) {
 
       <div className="slider-wrapper">
         {categorySlider?.map((category) => (
-          <CategoryBox
-            key={category.id}
-            category={category}
-            setSelectedCategory={setSelectedCategory}
-          />
+          <div>
+            <CategoryBox
+              key={category.id}
+              category={category}
+              setSelectedCategory={setSelectedCategory}
+            />
+          </div>
         ))}
       </div>
     </div>
