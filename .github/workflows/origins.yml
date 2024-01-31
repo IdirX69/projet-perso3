@@ -34,6 +34,7 @@ jobs:
     defaults:
       run:
         working-directory: backend
+
     services:
       mysql:
         image: mysql:8
@@ -41,12 +42,16 @@ jobs:
           - 3306:3306
         env:
           MYSQL_ROOT_PASSWORD: ${{ secrets.CI_DB_PASSWORD }}
-        options: --health-cmd="mysqladmin ping" --health-interval 10s --health-timeout 5s --health-retries 5
-    env:
-      DB_HOST: origins_digital_mysql
-      DB_USER: idir
-      DB_PASSWORD: ${{ secrets.CI_DB_PASSWORD }}
-      DB_NAME: origins_digital
+        options: >-
+          --health-cmd="mysqladmin ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        env:
+          DB_HOST: origins_digital_mysql
+          DB_USER: idir
+          DB_PASSWORD: ${{ secrets.CI_DB_PASSWORD }}
+          DB_NAME: origins_digital
 
   build-image:
     strategy:
@@ -61,7 +66,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Log in to registry
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $ --password-stdin
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u your-github-username --password-stdin
 
       - name: Build the Docker image
         uses: docker/build-push-action@v2
