@@ -43,11 +43,26 @@ jobs:
         env:
           MYSQL_ROOT_PASSWORD: ${{ secrets.CI_DB_PASSWORD }}
         options: --health-cmd="mysqladmin ping" --health-interval 10s --health-timeout 5s --health-retries 5
+
       env:
-      DB_HOST: origins_digital_mysql
-      DB_USER: idir
-      DB_PASSWORD: ${{ secrets.CI_DB_PASSWORD }}
-      DB_NAME: origins_digital
+        DB_HOST: localhost
+        DB_USER: root
+        DB_PASSWORD: ${{ secrets.CI_DB_PASSWORD }}
+        DB_NAME: origins_digital
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup .NET Core SDK 6
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: 6.0.x
+
+      - name: Install dependencies
+        run: dotnet restore
+
+      - name: Test
+        run: dotnet test --no-restore
 
   build-image:
     strategy:
