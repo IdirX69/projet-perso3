@@ -2,7 +2,7 @@ name: deploy-back
 
 on:
   push:
-    branches: [main]
+    branches: [dev]
 
 jobs:
   # This workflow contains a single job called "build"
